@@ -1,0 +1,7 @@
+<% @links.each.sort_by{ |link| link.title }.each do |link|%>
+  <%= link_to "#{link.title}", link.url %> <br>
+<% end %>
+
+<form action="<%= new_link_url %>" method="get">
+  <input type="submit" value="New Link">
+</form>

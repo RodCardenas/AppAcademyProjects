@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assessment04</title>
+</head>
+<body>
+  
+
+  <% if current_user %>
+  <%= "#{current_user.nickname}" %>
+  <%= button_to "Sign Out", session_url, method: :delete %>
+  <% else %>
+  <%= link_to "Log In", new_session_url %>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>

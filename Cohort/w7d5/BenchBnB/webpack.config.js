@@ -1,9 +1,15 @@
+var path = require("path");
+
 module.exports = {
   context: __dirname,
   entry: "./frontend/bench_bnb.jsx",
   output: {
-    path: "./",
+    path: path.join(__dirname, 'app', 'assets', 'javascripts'),
     filename: "bundle.js"
+  },
+  devtool: 'source-maps',
+  resolve: {
+    extensions: ["", ".js", ".jsx"]
   },
   module: {
     loaders: [
@@ -14,10 +20,11 @@ module.exports = {
         query: {
           presets: ['react']
         }
+      },
+      {
+        test: /\.node$/,
+        loader: "node-loader"
       }
     ]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
   }
 };

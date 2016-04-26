@@ -1,7 +1,11 @@
 class Api::BenchController < ApplicationController
   def index
-    puts "here"
-    @benches = Bench.all
+    # @benches = Bench.all
+
+    northEast = params["northEast"]
+    southWest = params["southWest"]
+
+    @benches = Bench.in_bounds(northEast, southWest)
     render 'api/benches/index'
   end
 

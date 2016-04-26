@@ -7,5 +7,12 @@ module.exports = {
       actionType: BenchConstants.BENCHES_RECEIVED,
       benches: benches
     });
+  },
+
+  benchHoverEvent: function(bench){
+    AppDispatcher.dispatch({
+      actionType: BenchConstants.BENCH_HOVERED,
+      bench: bench
+    });
   }
 };

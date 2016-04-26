@@ -11,4 +11,7 @@
 #
 
 class Bench < ActiveRecord::Base
+  def self.in_bounds(northEast, southWest)
+    Bench.where(:lat => southWest["lat"] .. northEast["lat"]).where(:lng => southWest["lng"] .. northEast["lng"]);
+  end
 end

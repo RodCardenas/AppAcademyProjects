@@ -1,11 +1,33 @@
-var ReactDOM = require('react-dom');
 var React = require('react');
-ApiUtil = require('./util/api_util');
-store = require('./stores/bench_store.js');
+var ReactDOM = require('react-dom');
+var ReactRouter = require('react-router');
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var IndexRoute = ReactRouter.IndexRoute;
+var hashHistory = ReactRouter.hashHistory;
+
+var Search = require('./components/Search');
+
+var App = React.createClass({
+  render: function(){
+    return (
+        <div>
+          <header><h1>Bench BnB</h1></header>
+          {this.props.children}
+        </div>
+    );
+  }
+});
+
+var Router = (
+  <Router history={hashHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={Search}/>
+    </Route>
+  </Router>
+);
 
 document.addEventListener('DOMContentLoaded', function(){
-  ReactDOM.render(
-    // React.createElement(<div> hi </div>, {}),
-    React.createElement('div'),
-    document.getElementById('root'));
+  var root = document.getElementById('root');
+  ReactDOM.render(Router, root);
 });

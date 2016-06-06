@@ -1,0 +1,9 @@
+body{
+  display: flex;
+  justify-content: space-around;
+  background-color: LightGoldenRodYellow;
+}
+
+#canvas{
+  border: 1px solid black;
+}

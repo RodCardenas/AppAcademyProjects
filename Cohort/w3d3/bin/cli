@@ -1,0 +1,39 @@
+
+begin
+  puts " Enter your email:"
+  email = gets.chomp
+end until User.all.exists?(:email => email)
+
+puts "Your id is #{User.find_by(:email => email)[:id]}"
+user = User.find_by(:email => email)
+
+begin
+  puts "What do you want to do?"
+  puts "0. Create shortened URL"
+  puts "1. Visit shortened URL"
+
+  option = gets.chomp.to_i
+end until option == 0 || option == 1
+
+if option == 0
+  puts "Type in your URL:"
+  URL = gets.chomp
+
+  s = ShortenedUrl.create_for_user_and_long_url!(user, URL)
+  puts "Short URL is #{s[:short_URL]}"
+else
+  ShortenedUrl.all.each_with_index do |short, idx|
+    print idx
+    print " "
+    print short[:short_URL]
+    print " "
+    puts short[:long_URL]
+  end
+
+  puts "Select which to go to [0 - #{ShortenedUrl.all.count - 1}]"
+  link = gets.chomp
+
+  Launchy.open ShortenedUrl.all[link.to_i][:long_URL]
+end
+
+puts "Goodbye!"

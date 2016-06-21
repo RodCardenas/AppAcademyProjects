@@ -1,0 +1,68 @@
+.ttt{
+  border: 5px solid black;
+  width: 600px;
+  height: 600px;
+}
+
+ul{
+  list-style: none;
+}
+
+.row{
+  margin: auto auto;
+  padding: 0 0;
+  width: 600px;
+  height: 200px;
+}
+
+
+.col{
+  box-sizing: border-box;
+  padding: 0 0;
+  height: 200px;
+  width: 200px;
+  float: left;
+  border: 5px solid black;
+  background: red;
+  cursor: none;
+}
+
+.col:hover{
+  background: green;
+}
+
+.clicked{
+  color: white;
+  font-size: 150px;
+  text-align: center;
+  background: purple;
+}
+
+.clicked:hover{
+  background: purple;
+}
+
+.ttt:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.gameover{
+  -webkit-animation: spin 4s infinite linear, explode 4s infinite alternate;
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(3600deg); }
+}
+@-webkit-keyframes explode {
+    from {
+      width: 0%;
+      height: 0%;
+    }
+    to {
+      width: 100%;
+      height: 100%;
+    }
+}

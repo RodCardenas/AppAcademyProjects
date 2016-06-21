@@ -1,0 +1,14 @@
+/* PHASE 5: Cats */
+
+.force{
+  color: #f00;
+  font-size: 36px;
+  display: none;
+  background: black;
+  padding-left: 30px;
+  padding-right: 25px;
+}
+
+section:hover .force{
+  display: block;
+}

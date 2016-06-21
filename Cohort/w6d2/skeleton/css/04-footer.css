@@ -1,0 +1,30 @@
+/* PHASE 4: Footer */
+
+.footer{
+  position:absolute;
+  width:100%;
+  bottom:0px;
+  color: white;
+}
+
+
+div {
+  font-weight: 700;
+  font-size: 36px;
+  font-family: Roboto;
+  color: #0b0;
+  -webkit-animation: grow 2s infinite alternate, 4s ease-in 0s infinite alternate move_yoda_quote;
+  position: absolute;
+  bottom: 100px;
+}
+
+.rebel {
+  display: inline;
+}
+
+
+@-webkit-keyframes grow { from { font-size:1px; } to { font-size:72px; }  }
+
+@-webkit-keyframes move_yoda_quote { from { margin-left:0%; } to { margin-left:100%; }  }
+
+/*@-webkit-keyframes pulsate { from { height:30%; } to { height:60%; }  }*/

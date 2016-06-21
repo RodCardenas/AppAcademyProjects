@@ -1,0 +1,61 @@
+/* PHASE 3: Layout */
+
+
+
+.content{
+  width: 608px;
+  margin: 200px 0 auto;
+  position: relative;
+
+  background: #000;
+  /*-webkit-animation-name: spin;
+  -webkit-animation-duration: 4000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;*/
+
+  -webkit-animation: 4s ease-in 8s infinite spin, 4s ease-in 0s infinite alternate move_content;
+
+  /*-webkit-animation-name: move_content;
+  -webkit-animation-duration: 2000ms;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;*/
+}
+
+.content:before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1px;
+  background: #ccc;
+  top: 0;
+  bottom: 0;
+  left: 200px;
+
+}
+
+.content-sidebar{
+  width: 304px;
+  min-height: 200px;
+  background: #fff;
+  float: left;
+
+    -webkit-animation: 4s linear 0s infinite alternate spin;
+}
+
+.content-main{
+  width: 304px;
+  min-height: 200px;
+  background: #fff;
+  float: right;
+
+    -webkit-animation: 4s linear 0s infinite alternate spin;
+}
+
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes move_content { from { margin-left:0%; } to { margin-left:60%; }  }
